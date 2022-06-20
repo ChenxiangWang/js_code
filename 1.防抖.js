@@ -8,6 +8,9 @@ function debounce(fn, wait) {
         if (timer) {
             clearTimeout(timer);
         }
-        timer = setTimeout(() => fn(args), wait);
+        timer = setTimeout(() => {
+            fn(args);
+            timer = null;
+        }, wait);
     }
 }
